@@ -198,7 +198,7 @@ DATABASES = {
         'USER': 'sql_centroes_fct',
         'PASSWORD': '8WwetLxjtWs3ms2j',
         'HOST': 'http://168.90.176.4:888/phpmyadmin_f295f2133405ff4a/index.php',
-        'PORT': '3306',
+        'PORT': '888',
     }
 }
 

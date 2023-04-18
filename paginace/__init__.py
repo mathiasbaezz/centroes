@@ -1,7 +1,7 @@
 import pymysql
 conn = pymysql.connect(
-    host = 'http://168.90.176.4:888',
-    port = 3306,
+    host = 'http://168.90.176.4:888/phpmyadmin_f295f2133405ff4a/index.php',
+    port = 888,
     user = 'sql_centroes_fct',
     passwd = '8WwetLxjtWs3ms2j',
     db = 'sql_centroes_fct'
