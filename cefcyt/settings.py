@@ -196,7 +196,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'cefcyt',
         'USER': 'root',
-        'PASSWORD': 'Maherbacpaik1.',
+        'PASSWORD': 'Maherbacpaik1',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
@@ -243,6 +243,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
+
 
 STATIC_URL = '/static/'
 STATIC_ROOT = 'cefcyt/paginace/static/'
