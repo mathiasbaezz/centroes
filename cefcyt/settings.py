@@ -193,12 +193,8 @@ WSGI_APPLICATION = 'cefcyt.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sql_centroes_fct',
-        'USER': 'sql_centroes_fct',
-        'PASSWORD': '8WwetLxjtWs3ms2j',
-        'HOST': 'http://168.90.176.4:888/phpmyadmin_f295f2133405ff4a/index.php',
-        'PORT': '888',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
