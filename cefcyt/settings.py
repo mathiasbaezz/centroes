@@ -25,7 +25,7 @@ SECRET_KEY = '%ydp441=0s=)v=fi#4^pl6$==$7@2g5%l*zl5mg0qzxrz(qb)l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['centroes.fctunca.edu.py']
+ALLOWED_HOSTS = []
 
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
@@ -193,10 +193,15 @@ WSGI_APPLICATION = 'cefcyt.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'cefcyt',
+        'USER': 'root',
+        'PASSWORD': 'Maherbacpaik1',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
+
 
 
 # Password validation
