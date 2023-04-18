@@ -1,10 +1,10 @@
 import pymysql
 conn = pymysql.connect(
-    host = '127.0.0.1',
+    host = 'http://168.90.176.4:888/phpmyadmin_f295f2133405ff4a/index.php',
     port = 3306,
-    user = 'root',
-    passwd = 'Maherbacpaik1',
-    db = 'cefcyt'
+    user = 'sql_centroes_fct',
+    passwd = '8WwetLxjtWs3ms2j',
+    db = 'sql_centroes_fct'
 )
 pymysql.version_info = (1, 4, 0, "final", 0)
 pymysql.install_as_MySQLdb()
