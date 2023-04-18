@@ -1,0 +1,56 @@
+{% include "cabecera.html" %}
+{% load static %}
+
+
+	<!-- Breadcrumb section -->
+	<div class="site-breadcrumb">
+		<div class="container">
+			<a href="/"><i class="fa fa-home"></i> Inicio</a> <i class="fa fa-angle-right"></i>
+			<span>Tienda</span>
+		</div>
+	</div>
+	<!-- Breadcrumb section end -->
+
+
+	<!-- Courses section -->
+	<section class="full-courses-section spad pt-0">
+		<div class="container">
+			<div class="row">
+				<!-- course item -->
+                {% for articulosi in articulosis %}
+				<div class="col-lg-4 col-md-6 course-item">
+					<div class="course-thumb">
+						<img src="{% static "image/course/" %}{{ articulosi.foto }}" alt="">
+						<div class="course-cat">
+                            <a href="{{ articulosi.pago }}"  class="event-readmore" ><span>Comprar</span></a>
+						</div>
+					</div>
+					<div class="course-info">
+						<h4>{{ articulosi.title }}</h4>
+						<h4 class="cource-price">{{ articulosi.text}}</h4>
+					</div>
+				</div>
+                {% endfor %}
+				<!-- course item -->
+			</div>
+			<div class="text-center">
+				<ul class="site-pageination">
+					{% if articulosis.has_previous %}
+                            <li><a href="?page=1" >&laquo; Inicio</a></li>
+                            <li><a href="?page={{ articulosis.previous_page_number }}">&laquo;</a></li>
+                        {% endif %}
+                        <span class="current">
+                            Pág. {{ articulosis.number }} de {{ articulosis.paginator.num_pages }}.
+                        </span>
+                        {% if articulosis.has_next %}
+                            <li><a href="?page={{ articulosis.next_page_number }}">&raquo;</a></li>
+                            <li><a href="?page={{ articulosis.paginator.num_pages }}">Fin &raquo;</a></li>
+                        {% endif %}
+				</ul>
+			</div>
+		</div>
+	</section>
+	<!-- Courses section end-->
+
+
+{% include "pie_pagina.html" %}

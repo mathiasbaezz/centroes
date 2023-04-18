@@ -1,0 +1,57 @@
+{% include "cabecera.html" %}
+{% load static %}
+
+
+	<!-- Breadcrumb section -->
+	<div class="site-breadcrumb">
+		<div class="container">
+			<a href="/"><i class="fa fa-home"></i> Inicio</a> <i class="fa fa-angle-right"></i>
+			<span>Eventos</span>
+		</div>
+	</div>
+	<!-- Breadcrumb section end -->
+
+
+	<!-- Courses section -->
+	<section class="full-courses-section spad pt-0">
+		<div class="container">
+			<div class="row">
+				<!-- course item -->
+				{% for evento in eventos %}
+                <div class="col-lg-4 col-md-6 event-item">
+					<div class="event-thumb" >
+						<img src="{% static "image/event/" %}{{ evento.foto }}" alt="">
+						<div class="event-date" >
+							<span >{{ evento.text}} </span>
+						</div>
+					</div>
+					<div class="event-info">
+						<h4>{{ evento.title }}</h4>
+						<p><i class="fa fa-calendar-o" ></i> {{ evento.published_date }} <i class="fa fa-map-marker" ></i> {{ evento.ubicacion}}</p>
+						<a href="{{ evento.red }}"  class="event-readmore" style="color: #444444" >REGISTRARME <i class="fa fa-angle-double-right" ></i></a>
+					</div>
+				</div>
+                {% endfor %}
+				<!-- course item -->
+			</div>
+			<div class="text-center">
+				<ul class="site-pageination">
+					{% if eventos.has_previous %}
+                            <li><a href="?page=1" >&laquo; Inicio</a></li>
+                            <li><a href="?page={{ eventos.previous_page_number }}">&laquo;</a></li>
+                        {% endif %}
+                        <span class="current">
+                            Pág. {{ eventos.number }} de {{ eventos.paginator.num_pages }}.
+                        </span>
+                        {% if eventos.has_next %}
+                            <li><a href="?page={{ eventos.next_page_number }}">&raquo;</a></li>
+                            <li><a href="?page={{ eventos.paginator.num_pages }}">Fin &raquo;</a></li>
+                        {% endif %}
+				</ul>
+			</div>
+		</div>
+	</section>
+	<!-- Courses section end-->
+
+
+{% include "pie_pagina.html" %}

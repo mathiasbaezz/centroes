@@ -1,0 +1,60 @@
+{% include "cabecera.html" %}
+{% load static %}
+
+	<!-- Breadcrumb section -->
+	<div class="site-breadcrumb">
+		<div class="container">
+			 <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i><span>Resultados de la búsqueda</span>
+
+		</div>
+	</div>
+	<!-- Breadcrumb section end -->
+
+
+
+
+
+	<!-- Blog page section  -->
+	<section class="blog-page-section spad pt-0">
+		<div class="container">
+			<div class="row">
+            {% if posts %}
+            {% for post in posts %}
+				<div class="col-lg-11 post-list">
+					<div class="post-item" id="postItem">
+						<div class="post-thumb set-bg" data-setbg="{% static "image/blog/" %}{{ post.foto }}"></div>
+						<div class="post-content">
+							<h3><a href="/blog/{{ post.id }}">{{ post.title }}</a></h3>
+							<p>{{ post.text|truncatewords:"100" }}</p>
+						</div>
+					</div>
+                </div>
+            {% endfor %}
+            {% else %}
+            <h3>No se han encontrado resultados</h3>
+            {% endif %}
+            </div>
+            <div class="text-center">
+                <ul class="site-pageination">
+                        {% if busqueda.has_previous %}
+                            <li><a href="?page=1" >&laquo; Inicio</a></li>
+                            <li><a href="?page={{ busqueda.previous_page_number }}">&laquo;</a></li>
+                        {% endif %}
+                        <span class="current">
+                            Pág. {{ busqueda.number }} de {{ busqueda.paginator.num_pages }}.
+                        </span>
+                        {% if busqueda.has_next %}
+                            <li><a href="?page={{ busqueda.next_page_number }}">&raquo;</a></li>
+                            <li><a href="?page={{ busqueda.paginator.num_pages }}">Fin &raquo;</a></li>
+                        {% endif %}
+                </ul>
+            </div>
+
+
+				<!-- sidebar -->
+
+		</div>
+	</section>
+	<!-- Blog page section end -->
+
+{% include "pie_pagina.html" %}

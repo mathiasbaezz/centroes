@@ -1,0 +1,196 @@
+{% include "cabecera.html" %}
+{% load static %}
+
+
+
+	<!-- Breadcrumb section -->
+	<div class="site-breadcrumb">
+		<div class="container">
+			<a href="/"><i class="fa fa-home"></i> Inicio</a> <i class="fa fa-angle-right"></i>
+			<span>Sobre Nosotros</span>
+		</div>
+	</div>
+	<!-- Breadcrumb section end -->
+
+
+	<!-- About section -->
+	<section class="about-section spad pt-0">
+		<div class="container">
+			<div class="section-title text-center">
+				<h3>Centro de Estudiantes </h3>
+				<p>Facultad de Ciencias y Tecnologías | Universidad Nacional de Caaguazú</p>
+			</div>
+			<div class="row">
+				<div class="col-lg-6 about-text">
+					{% for about in abouts %}
+                    <h5>{{about.titulo1}}</h5>
+					<p>{{ about.somos| linebreaksbr }} </p>
+                    <h5 class="pt-4">{{about.titulo2}}</h5>
+					<p>{{ about.historia| linebreaksbr }}</p>
+                    {% endfor %}
+					<ul class="about-list">
+                        <h5>La FCyT | CE y sus Conquistas</h5>
+                        <p>Desde sus inicios la Facultad de Ciencias y Tecnologías con apoyo del Centro de Estudiantes aposto por el deporte sano participando a través de los estudiantes de esta Alta Casa de Estudios en distintos campeonatos en la regíon, conquistando muchas de las mismas, teniendo presente la rica historia deportiva nos tomamos el tiempo de recabar esos datos y transcribirlos a continuación: </p>
+                        <h5>Copa UNCA</h5>
+						<li> &#127942; Campeón General  &#9734; 2016 &#9734; 2017 &#9734; 2018 &#9734; 2019 &#9734; 2022 </li>
+						<li> &#127942; Campeón Handball Masculino   &#9734; 2017 &#9734; 2018 &#9734; 2022</li>
+                        <li> &#127942; Campeón Handball Femenino    &#9734; 2022</li>
+						<li> &#127942; Campeón Basket Masculino   &#9734; 2016 &#9734; 2018 &#9734; 2019</li>
+						<li> &#127942; Campeón Basket Femenino   &#9734;2016 &#9734; 2017 &#9734; 2018 &#9734; 2019 &#9734; 2022</li>
+                        <li> &#127942; Campeón Volley Masculino   &#9734; 2016 &#9734; 2017</li>
+                        <li> &#127942; Campeón Volley Femenino   &#9734; 2018</li>
+                        <li> &#127942; Campeón Futsal Masculino   &#9734; 2012 &#9734; 2016</li>
+                        <li> &#127942; Campeón Futbol de Campo Masculino   &#9734; 2019 &#9734; 2022</li>
+                        <li> &#127942; Campeón Futbol de Campo Femenino   &#9734; 2018 </li>
+                        <li><i class="fa fa-trophy"></i> Vice-Campeón Volley Masculino   &#9734; 2018 &#9734; 2019 &#9734; 2022</li>
+                        <li><i class="fa fa-trophy"></i> Vice-Campeón Volley Femenino   &#9734;2016 &#9734; 2017 &#9734; 2019 &#9734; 2022</li>
+                        <li><i class="fa fa-trophy"></i> Vice-Campeón Futsal Masculino   &#9734; 2013 &#9734; 2015 &#9734; 2022</li>
+                        <li><i class="fa fa-trophy"></i> Vice-Campeón Futsal Femenino   &#9734; 2017 </li>
+                        <li><i class="fa fa-trophy"></i> Vice-Campeón Futbol de Campo Masculino   &#9734; 2013 &#9734; 2015 &#9734; 2017 &#9734; 2018 </li>
+                        <li><i class="fa fa-trophy"></i> Vice-Campeón Futbol de Campo Femenino   &#9734; 2017 &#9734; 2022</li>
+                        <li><i class="fa fa-trophy"></i> Vice-Campeón Basket Masculino   &#9734; 2022</li>
+                        <h5>Juegos Universitarios de la FUO</h5>
+                        <li> &#127942; Campeón General    &#9734; 2022</li>
+                        <li> &#127942; Campeón General Masculino   &#9734; 2016</li>
+                        <li> &#127942; Campeón General Atletismo Femenino   &#9734; 2018</li>
+                        <li><i class="fa fa-trophy"></i> Vice-Campeón General Mixto   &#9734; 2016 &#9734; 2018</li>
+                        <li><i class="fa fa-trophy"></i> Vice-Campeón General Masculino   &#9734; 2014 &#9734; 2018 </li>
+                        <li><i class="fa fa-trophy"></i> Vice-Campeón General Femenino   &#9734; 2016 </li>
+                        <li><i class="fa fa-trophy"></i> Vice-Campeón General Atletismo Mixto   &#9734; 2018 </li>
+                        <!--<li> &#129351; 1° Puesto Posta | &#129351;&#129351;&#129351;&#129351; medallas de Oro  &#9734; 2018</li>
+                        <li> &#129351; 1° Puesto 200 mts | &#129351; medalla de Oro  &#9734; 2018</li>-->
+                        <li> &#127942; Campeón Futbol de Campo Masculino   &#9734; 2022</li>
+                        <li> &#127942; Campeón Basket Masculino   &#9734; 2022</li>
+                        <li> &#127942; Campeón Volley Masculino   &#9734; 2016</li>
+                        <li> &#127942; Campeón Rugby Masculino  &#9734; 2015 &#9734; 2016 &#9734; 2018 &#9734; 2019</li>
+                        <li> &#127942; Campeón Ajedrez   &#9734; 2016</li>
+                        <li> &#127942; Campeón Tenis de Mesa   &#9734; 2016 &#9734; 2022 </li>
+                        <li> &#127942; Campeón Tenis   &#9734; 2016 &#9734; 2022 </li>
+                        <li><i class="fa fa-trophy"></i> Vice-Campeón Futbol de Campo Femenino   &#9734; 2018</li>
+                        <li><i class="fa fa-trophy"></i> Vice-Campeón Basket Masculino  &#9734; 2016 &#9734; 2019</li>
+                        <li><i class="fa fa-trophy"></i> Vice-Campeón Volley Masculino   &#9734; 2018</li>
+                        <li><i class="fa fa-trophy"></i> Vice-Campeón Rugby Masculino   &#9734; 2022</li>
+                        <li><i class="fa fa-trophy"></i> Vice-Campeón Rugby Femenino   &#9734; 2018</li>
+
+                        <h5>Copa Confederaciones FEUNCA | FEUCCO</h5>
+                        <li> &#127942; Campeón Volley Masculino   &#9734; 2017</li>
+                        <li> &#127942; Campeón Handball Masculino  &#9734; 2017</li>
+                        <!--<li><i class="fa fa-check-square-o"></i> </li>-->
+					</ul>
+                    {% for about in abouts %}
+                        <h5 class="pt-4">{{about.titulo3}}</h5>
+                        <p>{{ about.copainge| linebreaksbr }} </p>
+                        {% endfor %}
+				</div>
+				<div class="col-lg-6 pt-5 pt-lg-0">
+                    {% for fotosombra in fotosombras %}
+					<img src="{% static "image/fotosombras/" %}{{ fotosombra.img_1 }}" alt="" class="sombra" >
+                    <img src="{% static "image/fotosombras/" %}{{ fotosombra.img_2 }}" alt="" class="sombra">
+                    <img src="{% static "image/fotosombras/" %}{{ fotosombra.img_3 }}" alt="" class="sombra">
+                    <img src="{% static "image/fotosombras/" %}{{ fotosombra.img_4 }}" alt="" class="sombra">
+                    <img src="{% static "image/fotosombras/" %}{{ fotosombra.img_5 }}" alt="" class="sombra" >
+                    <img src="{% static "image/fotosombras/" %}{{ fotosombra.img_6 }}" alt="" class="sombra">
+                    <img src="{% static "image/fotosombras/" %}{{ fotosombra.img_7 }}" alt="" class="sombra">
+                    <img src="{% static "image/fotosombras/" %}{{ fotosombra.img_8 }}" alt="" class="sombra">
+                    <img src="{% static "image/fotosombras/" %}{{ fotosombra.img_9 }}" alt="" class="sombra" >
+                    <img src="{% static "image/fotosombras/" %}{{ fotosombra.img_10 }}" alt="" class="sombra" >
+                    <img src="{% static "image/fotosombras/" %}{{ fotosombra.img_11 }}" alt="" class="sombra" >
+                    {% endfor %}
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- About section end-->
+
+    <!-- Primero-->
+        <section class="team-section spad">
+		<div class="container">
+			<div class="section-title text-center">
+				<h3>PRESIDENTES DEL CE|FCYT</h3>
+				<p>Los Presidentes a lo largo de la historia del Centro de Estudiantes</p>
+			</div>
+        <div class="row">
+                {% for primero in primeros %}
+				<div class="col-md-6 col-lg-3">
+					<div class="member">
+						<div class="member-pic set-bg" data-setbg="{% static "image/member/" %}{{ primero.foto }}">
+							<div class="member-social">
+								<a href="mailto:{{ primero.face }}" target="_blank" ><i class="fa fa-briefcase"></i></a>
+								<!--<a href="{{ primero.twi }}" target="_blank" ><i class="fa fa-twitter"></i></a>
+								<a href="{{ primero.ins }}" target="_blank" ><i class="fa fa-instagram"></i></a>-->
+							</div>
+						</div>
+						<h5>{{ primero.nombre }}</h5>
+                        <p >{{ primero.carrera }}</p>
+						<p >{{ primero.cargo }}</p>
+					</div>
+				</div>
+                {% endfor %}
+		</div>
+        </div>
+	</section>
+
+
+    <!-- End-->
+            <div class="section-title text-center">
+				<h3>Miembros Destacados del CE|FCYT  </h3>
+				<p>Ing. Monica Ríos, Ing, Zaul Arriola, Ing. José Villasanti, Ing. Juan Vicente Bogado, Ing. Pedro Pastor, </p>
+                <p>Ing Cristhian Duarte, Ing. Fredy Vargas, Univ. Jimmy Villaverde, Univ. Johana Torres, Univ. Yohanna Rodriguez, </p>
+                <p>Univ. Ever Riveros, Univ. Liz Ayala, Univ. Juan Leiva, Univ. Pablo Riveros, Univ. Carlos Casco, </p>
+                <p>Univ. Maria Caballero, Univ. Gissell Riva, Univ. Arturo Acosta, Univ. Fabio Diana.</p>
+			</div>
+	<!-- Testimonial section  -->
+	<section class="testimonial-section spad">
+		<div class="container">
+			<div class="testimonial-slider owl-carousel">
+				{% for testimonio in testimonios %}
+                <div class="ts-item">
+					<div class="row">
+						<div class="col-md-3">
+							<div class="ts-author-pic set-bg" data-setbg="{% static "image/member/" %}{{ testimonio.foto }}"></div>
+						</div>
+						<div class="col-md-9 ts-text">
+							<p>“{{ testimonio.texto | linebreaksbr}} ”</p>
+							<h5>{{ testimonio.nombre }}</h5>
+							<span>{{ testimonio.cargo }}</span>
+						</div>
+					</div>
+				</div>
+                {% endfor %}
+			</div>
+		</div>
+	</section>
+	<!-- Testimonial section end -->
+
+
+	<!-- Team section  -->
+	<section class="team-section spad">
+		<div class="container">
+			<div class="section-title text-center">
+				<h3>NUESTRO EQUIPO</h3>
+				<p>Un equipo de sobresalientes estudiantes universitarios</p>
+			</div>
+			<div class="row">
+                {% for miembro in miembros %}
+				<div class="col-md-6 col-lg-3">
+					<div class="member">
+						<div class="member-pic set-bg" data-setbg="{% static "image/member/" %}{{ miembro.foto }}">
+							<div class="member-social">
+								<a href="{{ miembro.face }}" target="_blank" ><i class="fa fa-facebook"></i></a>
+								<a href="{{ miembro.twi }}" target="_blank" ><i class="fa fa-twitter"></i></a>
+								<a href="{{ miembro.ins }}" target="_blank" ><i class="fa fa-instagram"></i></a>
+							</div>
+						</div>
+						<h5>{{ miembro.nombre }}</h5>
+						<p >{{ miembro.cargo }}</p>
+					</div>
+				</div>
+                {% endfor %}
+			</div>
+		</div>
+	</section>
+	<!-- Team section end -->
+
+
+
+{% include "pie_pagina.html" %}
