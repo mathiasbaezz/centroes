@@ -25,7 +25,7 @@ SECRET_KEY = '%ydp441=0s=)v=fi#4^pl6$==$7@2g5%l*zl5mg0qzxrz(qb)l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['centroes.fctunca.edu.py']
 
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
