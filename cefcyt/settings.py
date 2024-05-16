@@ -25,7 +25,7 @@ SECRET_KEY = '%ydp441=0s=)v=fi#4^pl6$==$7@2g5%l*zl5mg0qzxrz(qb)l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['centroes.fctunca.edu.py']
+ALLOWED_HOSTS = []
 
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
@@ -154,6 +154,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'paginace.apps.PaginaceConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -247,6 +248,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = 'cefcyt/paginace/static/'
+MEDIA_URL = '/image/'
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "paginace"),
+    os.path.join(BASE_DIR, "paginace/static"),
 )
+MEDIA_ROOT = os.path.join(BASE_DIR, 'paginace/static/image/')
+
+

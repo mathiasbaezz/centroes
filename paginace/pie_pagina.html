@@ -1,5 +1,6 @@
 {% load static %}
 
+
 <div class="modal fade" id="busqueda" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -73,8 +74,13 @@
 						<ul>
                             <li ><i class="fa fa-chevron-right" style="display: inline"></i><a href="/" style="display: inline"> Inicio</a></li>
 							<li><i class="fa fa-chevron-right" style="display: inline"></i><a  href="/about" style="display: inline" > Sobre Nosotros</a></li>
+                            <li><i class="fa fa-chevron-right" style="display: inline"></i><a  href="/blog" style="display: inline" > Blog</a></li>
 							<li><i class="fa fa-chevron-right" style="display: inline"></i><a href="/course" style="display: inline"> Tienda</a></li>
 							<li><i class="fa fa-chevron-right" style="display: inline"></i><a href="/eventos" style="display: inline"> Eventos</a></li>
+                            <li><i class="fa fa-chevron-right" style="display: inline"></i><a href="/contact" style="display: inline"> Contacto</a></li>
+                            <li><i class="fa fa-chevron-right" style="display: inline"></i><a href="/transparencia" style="display: inline"> Transparencia</a></li>
+                            <li><i class="fa fa-chevron-right" style="display: inline"></i><a href="/contact" style="display: inline"> Danos feedbacks</a></li>
+                            <li id="MensajeTiendaNew" style="background-color: transparent; padding: 0px; color: black"  ><i class="fa fa-chevron-right" style="display: inline"></i><a href="/gestion" style="display: inline; " > <b>Gestión CE 2022 - 2023</b></a></li>
 							<!--<li><a href="">Features</a></li>-->
                             <!--<div class="stat">
                                 <span class="stat-count" style="color:white;"></span>
@@ -300,10 +306,38 @@
             });
         });
 
+        const hamburger = document.querySelector(".hamburger");
+        const navLink = document.querySelector(".nav-link");
+        const links = document.querySelectorAll(".nav-link li");
+
+        hamburger.addEventListener('click', ()=>{
+           //Animate Links
+            navLink.classList.toggle("open");
+            links.forEach(link => {
+                link.classList.toggle("fade");
+            });
+
+        //Hamburger Animation
+        hamburger.classList.toggle("toggle");
+        });
+
 
     </script>
     <script>
     !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+    </script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('off/service-worker.js')
+            .then(function(registration) {
+              console.log('Service Worker registrado con éxito:', registration);
+            })
+            .catch(function(error) {
+              console.log('Error al registrar el Service Worker:', error);
+            });
+        });
+      }
     </script>
 </body>
 </html>

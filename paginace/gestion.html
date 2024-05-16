@@ -1,0 +1,102 @@
+{% include "cabecera.html" %}
+{% load static %}
+{% load pwa %}
+
+	<!-- Breadcrumb section -->
+	<div class="site-breadcrumb">
+		<div class="container">
+
+			<span></span>
+
+		</div>
+	</div>
+	<!-- Breadcrumb section end -->
+    <div class="container">
+    <ol class="breadcrumb" style="background-color: transparent;">
+      <li class="breadcrumb-item" ><a href="/" style="color: black"><i class="fa fa-home" style="color: black"></i> Inicio</a> </li>
+      <li class="breadcrumb-item active">Gestión CE 2022 - 2023</li>
+    </ol>
+    </div>
+
+    <div class="col-lg-12 section-title text-center" >
+				<h3>Gestión del  Centro de Estudiantes | Periodo 2022 - 2023 </h3>
+				<p>Facultad de Ciencias y Tecnologías | Universidad Nacional de Caaguazú</p>
+	</div>
+
+
+					<!-- widget -->
+					<div class="widget " >
+                        <center><img style="margin-bottom: 70px;" src="{% static "image/add.png" %}" alt="" class="sombra" ></center></div>
+					</div>
+
+
+	<!-- Blog page section  -->
+	<section class="blog-page-section spad pt-0">
+		<div class="container ">
+			<div class="row">
+				<div class="col-lg-12 post-list">
+                    {% for gestion in posts_pagin %}
+					<div class="post-item post-details">
+
+						<div class="post-content">
+							<h3>{{ gestion.title }}</h3>
+							<p>{{ gestion.text| linebreaksbr }}</p>
+						</div>
+                        <img src="{% static "image/" %}{{ gestion.foto1 }}" class="post-thumb-full col-lg-12" style="padding: 0px;" alt="">
+                        <img src="{% static "image/" %}{{ gestion.foto2 }}" class="post-thumb-full col-lg-12" style="padding: 0px;" alt="">
+                        <img src="{% static "image/" %}{{ gestion.foto3 }}" class="post-thumb-full col-lg-12" style="padding: 0px;" alt="">
+                        <img src="{% static "image/" %}{{ gestion.foto4 }}" class="post-thumb-full col-lg-12" style="padding: 0px;" alt="">
+                        <img src="{% static "image/" %}{{ gestion.foto5 }}" class="post-thumb-full col-lg-12" style="padding: 0px;" alt="">
+
+
+					</div>
+                    {% endfor %}
+
+
+
+				</div>
+
+
+			</div>
+		</div>
+	</section>
+	<!-- Blog page section end -->
+<section class="blog-page-section spad pt-0">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="post-item post-details">
+
+						<div class="post-content">
+
+							<div class="post-meta">
+								<span><i class="fa fa-calendar-o"></i>     08 Mayo 2023 20:40</span>
+								<span><i class="fa fa-user"></i>      CE-FCYT</span>
+							</div>
+
+                            <blockquote><em>" De esta manera la FCyT cumple con su visión de ser una Facultad Líder, además de cumplir un rol de reunir a distintos sectores de la profesión en pos de abrir horizontes para sus alumnos y a la comunidad en general."</em></blockquote>
+						</div>
+                        <div class="tag"><i class="fa fa-tag"></i> ACTIVIDADES, DESARROLLO, FCYT </div>
+						<div class="post-author">
+							<div class="pa-thumb set-bg" data-setbg="{% static "image/blog/author2.png" %}"></div>
+							<div class="pa-content">
+                                <h4>Secretaría de Prensa - Marketing & Cultura.</h4>
+								<p>" Este y otros artículos son editados y publicados por parte de las Secretarías de Prensa - Marketing & Cultura del Centro de Estudiantes de manera conjunta."</p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<!-- sidebar -->
+				<div class="col-sm-8 col-md-5 col-lg-4 col-xl-3 offset-xl-1 offset-0 pl-xl-0 sidebar">
+
+					<!-- widget -->
+					<div class="widget">
+						<img src="{% static "image/add.png" %}" alt="" class="sombra">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% include "pie_pagina.html" %}

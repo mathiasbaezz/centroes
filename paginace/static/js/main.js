@@ -1,9 +1,4 @@
-/* =================================
-------------------------------------
-	Unica - University Template
-	Version: 1.0
- ------------------------------------
- ====================================*/
+
 
 
 
@@ -104,8 +99,8 @@ $(window).on('load', function() {
 		loop: true,
 		nav: true,
 		dots: true,
-		animateOut: 'fadeOutUp',
-		animateIn: 'fadeInUp',
+		animateOut: 'fadeOutLeft',
+		animateIn: 'fadeInRight',
 		navText: ['<i class="fa fa-angle-left"></i>', '</i><i class="fa fa-angle-right"></i>'],
 		items: 1,
 		autoplay: true

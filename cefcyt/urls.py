@@ -14,10 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from paginace import views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls import url
 
 
 
@@ -29,15 +30,21 @@ urlpatterns = [
     path ('about', views.about),
     path ('blog', views.blog),
     path ('blog/<slug:pk>', views.single_blog, name='single_blog'),
+    path('gestion', views.gestion),
     path('course', views.course),
     path('shop', views.shop),
     path('eventos', views.eventos),
     path('contact', views.contact),
     path('inicio/', views.index),
+    path('streaming/', views.streaming),
+    path('copainge/', views.deportes),
     path('correo', views.crear_correo, name='crear_correo'),
     path('contacto', views.crear_contacto, name='crear_contacto'),
     path('data_inicial', views.data_inicial, name='data_inicial'),
     path('busqueda',views.busqueda),
+    path('inscripcion', views.inscripcion),
+    path('transparencia', views.transparencia),
+    path('feedback', views.feedback),
     path('tag1', views.tag1),
     path('tag2', views.tag2),
     path('tag3', views.tag3),
@@ -51,4 +58,7 @@ urlpatterns = [
     path('tag11', views.tag11),
     path('tag12', views.tag12),
     path("search", views.search),
+    path('', include('pwa.urls')),
     ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

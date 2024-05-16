@@ -15,7 +15,7 @@ def index(request):
     galerias = Galeria.objects.all()
     datoces = Datoce.objects.all()
     relojes = Reloj.objects.all()
-    papers = Paper.objects.all()
+    papers = Paper.objects.all().order_by('-id')
     servicios = Servicio.objects.all()
     return render(request, 'index.html', {"posts": posts,"articulos": articulos,"eventos": eventos,"galerias":galerias,
               "datoces":datoces,"relojes":relojes,"papers":papers,"servicios":servicios})
@@ -30,6 +30,10 @@ def about (request):
     abouts = About.objects.all()
     primeros = Primero.objects.all()
     return render(request, 'about.html' , {"miembros":miembros,"testimonios":testimonios,"fotosombras":fotosombras,"abouts":abouts,"primeros":primeros})
+
+def deportes (request):
+    deportes = Deporte.objects.all()
+    return render(request, 'copainge.html' , {"deportes":deportes})
 
 def blog (request):
     posts = Post.objects.all().order_by('-published_date')
@@ -73,6 +77,33 @@ def eventos(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+def inscripcion(request):
+    return render(request, 'inscripcion.html')
+
+def transparencia(request):
+    return render(request, 'transparencia.html')
+
+def feedback(request):
+    return render(request, 'feedback.html')
+
+def streaming(request):
+    return render(request, 'streaming.html')
+
+def gestion (request):
+    gestions = Gestion.objects.all().order_by('-published_date')
+    paginator = Paginator(gestions, 30)
+    page = request.GET.get('page')
+    paginator_posts = paginator.get_page(page)
+    gestions = Gestion.objects.all().order_by('-published_date')[0:6]
+    contexto = {"posts_pagin": paginator_posts, "gestions": gestions}
+    return render(request, 'gestion.html', contexto)
+
+def gestionce(request, pk):
+    gestion = get_object_or_404(Gestion, pk=pk)
+    gestions = Gestion.objects.all().order_by('-published_date')[0:6]
+    contexto = {"gestion": gestion, "gestions": gestions}
+    return render(request, 'gestionce.html', contexto)
 
 
 def crear_correo(request):

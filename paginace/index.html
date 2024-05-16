@@ -1,16 +1,17 @@
 {% include "cabecera.html" %}
 {% load static %}
 
+
 	<!-- Hero section -->
 	<section class="hero-section">
 		<div class="hero-slider owl-carousel">
             {% for paper in papers %}
-			<div class="hs-item set-bg" data-setbg="{% static "image/hero-slider/" %}{{ paper.foto }}">
+			<div class="hs-item set-bg" data-setbg="{% static "image/" %}{{ paper.foto}}">
 				<div class="hs-text">
 					<div class="container">
 						<div class="row" >
 							<div class="col-lg-8" >
-								<div class="hs-subtitle">{{ paper.titulo }}</div>
+								<div class="hs-subtitle" style="text-shadow: black 0.3em 0.3em 0.3em">{{ paper.titulo }}</div>
 								<h2 class="hs-title">{{paper.subtitulo }}</h2>
 								<p class="hs-des">{{ paper.texto|truncatewords:"50" }}</p>
                                 <a href="/blog/{{ paper.num }}" ><div class="site-btn" >LEER MÁs</div></a>

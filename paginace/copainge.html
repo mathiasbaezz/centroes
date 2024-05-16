@@ -1,0 +1,52 @@
+{% include "cabecera.html" %}
+{% load static %}
+
+
+
+
+	<!-- Breadcrumb section -->
+	<div class="site-breadcrumb">
+		<div class="container">
+
+		</div>
+	</div>
+	<!-- Breadcrumb section end -->
+    <div class="container">
+    <ol class="breadcrumb" style="background-color: transparent;">
+      <li class="breadcrumb-item" ><a href="/" style="color: black"><i class="fa fa-home" style="color: black"></i> Inicio</a> </li>
+      <li class="breadcrumb-item active">Copa Inge 2023</li>
+    </ol>
+    </div>
+
+	<!-- Breadcrumb section end -->
+
+
+
+	<!-- Team section  -->
+	<section class="team-section spad">
+		<div class="container">
+			<div class="section-title text-center">
+				<h3>COPA INGE 2023</h3>
+				<p>Conocé todas las modalidades de la competencia.</p>
+			</div>
+			<div class="row">
+                {% for deporte in deportes %}
+				<div class="col-md-6 col-lg-3">
+					<div class="member">
+						<div class="member-pic set-bg" data-setbg="{% static "image/" %}{{ deporte.foto }}">
+							<div class="member-social">
+								<a href="{{ deporte.link }}" target="_blank" ><i class="fa fa-facebook"></i></a>
+							</div>
+						</div>
+						<h5>{{ deporte.nombre }}</h5>
+					</div>
+				</div>
+                {% endfor %}
+			</div>
+		</div>
+	</section>
+	<!-- Team section end -->
+
+
+
+{% include "pie_pagina.html" %}

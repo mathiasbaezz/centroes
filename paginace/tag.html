@@ -1,5 +1,6 @@
 {% include "cabecera.html" %}
 {% load static %}
+{% load pwa %}
 
 	<!-- Breadcrumb section -->
 	<div class="site-breadcrumb">
@@ -9,6 +10,13 @@
 		</div>
 	</div>
 	<!-- Breadcrumb section end -->
+    <div class="container">
+        <ol class="breadcrumb" style="background-color: transparent;">
+          <li class="breadcrumb-item" ><a href="/" style="color: black"><i class="fa fa-home" style="color: black"></i> Inicio</a> </li>
+          <li class="breadcrumb-item"><a href="/blog" style="color: black"> Blog</a> </li>
+          <li class="breadcrumb-item active">Noticias relacionadas</li>
+        </ol>
+     </div>
 
 
 

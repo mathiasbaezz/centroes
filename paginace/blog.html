@@ -1,15 +1,21 @@
 {% include "cabecera.html" %}
 {% load static %}
 
+
 	<!-- Breadcrumb section -->
 	<div class="site-breadcrumb">
 		<div class="container">
-			<a href="/"><i class="fa fa-home"></i> Inicio</a> <i class="fa fa-angle-right"></i>
-			<span>Blog</span>
+
 
 		</div>
 	</div>
 	<!-- Breadcrumb section end -->
+    <div class="container">
+    <ol class="breadcrumb" style="background-color: transparent;">
+      <li class="breadcrumb-item" ><a href="/" style="color: black"><i class="fa fa-home" style="color: black"></i> Inicio</a></li>
+      <li class="breadcrumb-item active">Blog</li>
+    </ol>
+    </div>
 
 	<!-- Blog page section  -->
 	<section class="blog-page-section spad pt-0">
@@ -33,15 +39,15 @@
 
 					<ul class="site-pageination">
                         {% if posts_pagin.has_previous %}
-                            <li><a href="?page=1" >&laquo; Inicio</a></li>
-                            <li><a href="?page={{ posts_pagin.previous_page_number }}">&laquo;</a></li>
+                            <li><a href="?page=1" ><b style="padding: 5px;"> Inicio </b></a></li>
+                            <li><a href="?page={{ posts_pagin.previous_page_number }}"><i class="fa fa-chevron-left" style="display: inline"></i></a></li>
                         {% endif %}
-                        <span class="current">
-                            Pág. {{ posts_pagin.number }} de {{ posts_pagin.paginator.num_pages }}.
+                        <span class="current" style="padding-right: 15px">
+                            Pág. {{ posts_pagin.number }} de {{ posts_pagin.paginator.num_pages }}
                         </span>
                         {% if posts_pagin.has_next %}
-                            <li><a href="?page={{ posts_pagin.next_page_number }}">&raquo;</a></li>
-                            <li><a href="?page={{ posts_pagin.paginator.num_pages }}">Fin &raquo;</a></li>
+                            <li><a href="?page={{ posts_pagin.next_page_number }}"><i class="fa fa-chevron-right" style="display: inline"></i></a></li>
+                            <li><a href="?page={{ posts_pagin.paginator.num_pages }}"><b style="padding: 5px;"> Fin </b></a></li>
                         {% endif %}
 
 					</ul>

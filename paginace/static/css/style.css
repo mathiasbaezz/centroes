@@ -98,6 +98,7 @@ ol {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center 0;
+
 }
 
 .text-white h1,
@@ -204,17 +205,17 @@ ol {
 @-webkit-keyframes loader {
 	0% {
 		-webkit-transform: rotate(0deg);
-		border: 4px solid #f44336;
+		border: 4px solid #808080;
 		border-left-color: transparent;
 	}
 	50% {
 		-webkit-transform: rotate(180deg);
-		border: 4px solid #673ab7;
+		border: 4px solid #080808;
 		border-left-color: transparent;
 	}
 	100% {
 		-webkit-transform: rotate(360deg);
-		border: 4px solid #f44336;
+		border: 4px solid #808080;
 		border-left-color: transparent;
 	}
 }
@@ -342,32 +343,6 @@ ol {
   max-height: 70px;
 }
 
-/**
-* Appointment Button *
-*/
-.appointment-btn {
-  margin-left: 25px;
-  background: #1977cc;
-  color: #fff;
-  border-radius: 50px;
-  padding: 8px 25px;
-  white-space: nowrap;
-  transition: 0.3s;
-  font-size: 14px;
-  display: inline-block;
-}
-
-.appointment-btn:hover {
-  background: #166ab5;
-  color: #fff;
-}
-
-@media (max-width: 768px) {
-  .appointment-btn {
-    margin: 0 15px 0 0;
-    padding: 6px 18px;
-  }
-}
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -428,103 +403,93 @@ ol {
   border-color: #808080;
 }
 
-.navbar .dropdown ul {
-  display: block;
-  position: absolute;
-  left: 20px;
-  top: calc(100% + 30px);
-  margin: 0;
-  padding: 10px 0;
-  z-index: 99;
-  opacity: 0;
-  visibility: hidden;
-  background: #fff;
-  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-  transition: 0.3s;
+
+/*Styling Hamburger Icon*/
+.hamburger div{
+    width: 30px;
+    height:3px;
+    background: #808080;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.hamburger{
+    display: none;
 }
 
-.navbar .dropdown ul li {
-  min-width: 200px;
+/*Stying for small screens*/
+@media screen and (max-width: 800px){
+    nav{
+        position: fixed;
+        z-index: 3;
+    }
+    .hamburger{
+        display:block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+    .nav-link{
+        position: fixed;
+        background: #131418;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+    .nav-link.open{
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    .nav-link li{
+        opacity: 0;
+    }
+    .nav-link li:nth-child(1){
+        transition: all 0.5s ease 0.2s;
+    }
+    .nav-link li:nth-child(2){
+        transition: all 0.5s ease 0.4s;
+    }
+    .nav-link li:nth-child(3){
+        transition: all 0.5s ease 0.6s;
+    }
+    .nav-link li:nth-child(4){
+        transition: all 0.5s ease 0.7s;
+    }
+    .nav-link li:nth-child(5){
+        transition: all 0.5s ease 0.8s;
+    }
+    .nav-link li:nth-child(6){
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+    .nav-link li:nth-child(7){
+        transition: all 0.5s ease 1s;
+        margin: 0;
+    }
+    li.fade{
+        opacity: 1;
+    }
+}
+/*Animating Hamburger Icon on Click*/
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    transition: all 0.7s ease;
+    width:0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
 }
 
-.navbar .dropdown ul a {
-  padding: 10px 20px;
-  font-size: 14px;
-  font-weight: 500;
-  text-transform: none;
-  color: #082744;
-  border: none;
-}
-
-.navbar .dropdown ul a i {
-  font-size: 12px;
-}
-
-.navbar .dropdown ul a:hover,
-.navbar .dropdown ul .active:hover,
-.navbar .dropdown ul li:hover>a {
-  color: #1977cc;
-}
-
-.navbar .dropdown:hover>ul {
-  opacity: 1;
-  top: 100%;
-  visibility: visible;
-}
-
-.navbar .dropdown .dropdown ul {
-  top: 0;
-  left: calc(100% - 30px);
-  visibility: hidden;
-}
-
-.navbar .dropdown .dropdown:hover>ul {
-  opacity: 1;
-  top: 0;
-  left: 100%;
-  visibility: visible;
-}
-
-@media (max-width: 1366px) {
-  .navbar .dropdown .dropdown ul {
-    left: -90%;
-  }
-
-  .navbar .dropdown .dropdown:hover>ul {
-    left: -100%;
-  }
-}
-
-.main-menu {
-	list-style: none;
-}
-
-.main-menu li {
-	display: inline;
-}
-
-.main-menu li a {
-	display: inline-block;
-	color: #808080;
-	font-size: 13px;
-	text-transform: uppercase;
-	font-weight: 500;
-	padding: 25px 20px;
-	margin-right: -5px;
-	-webkit-transition: all 0.4s ease 0s;
-	-o-transition: all 0.4s ease 0s;
-	transition: all 0.4s ease 0s;
-}
-
-
-
-.main-menu li a:hover {
-	background-color: #080808;
-}
-
-.main-menu li.active a {
-	background-color: #080808;
-}
 
 /*---------------------
 	Hero Section
@@ -738,77 +703,7 @@ ol {
 	font-weight: 400;
 }
 
-/*---------------------
-	Enroll Section
------------------------*/
 
-.enroll-section {
-	position: relative;
-}
-
-.enroll-section:after {
-	position: absolute;
-	content: '';
-	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	background: #000;
-	opacity: 0.8;
-}
-
-.enroll-section .container {
-	position: relative;
-	z-index: 1;
-}
-
-.enroll-section .section-title {
-	margin-bottom: 40px;
-}
-
-.enroll-list-item {
-	padding-left: 70px;
-	position: relative;
-	padding-bottom: 15px;
-	margin-bottom: 10px;
-}
-
-.enroll-list-item span {
-	position: absolute;
-	width: 40px;
-	height: 40px;
-	left: 0;
-	top: 0;
-	text-align: center;
-	border-radius: 50px;
-	background: #f6783a;
-	font-size: 16px;
-	font-weight: 500;
-	padding-top: 10px;
-}
-
-.enroll-list-item h5 {
-	font-weight: 400;
-	margin-bottom: 10px;
-}
-
-.enroll-list-item:after {
-	position: absolute;
-	content: '';
-	height: calc(100% - 45px);
-	left: 20px;
-	top: 48px;
-	border-left: 1px dashed #6c6e70;
-}
-
-.enroll-list-item:last-child {
-	margin-bottom: 0;
-	padding-bottom: 0;
-}
-
-.enroll-list-item:last-child:after {
-	display: none;
-}
 
 /*---------------------
 	Courses Section
@@ -1122,6 +1017,42 @@ ol {
 /*---------------------
 	Newsletter Section
 -----------------------*/
+
+#MensajeTiendaNew{
+	background: #808080;
+	color: #fff;
+	animation: tiendaNew 2.72s ease infinite;
+	transform-origin: 50% 50%;
+	-webkit-transition: 0.5s ease-out;
+	-moz-transition: 0.5s ease-out;
+	-o-transition: 0.5s ease-out;
+	transition: 0.5s ease-out;
+	text-align: center;
+	font-size: 13px;
+	padding: 10px;
+	margin-bottom: 0px;
+	clear: both;
+	display: block;
+	width: 100%;
+	-webkit-border-radius: 6px;
+	-moz-border-radis: 6px;
+	border-radius: 6px;
+}
+@keyframes tiendaNew{
+	0% { transform:translate(0,0) }
+	4.41177% { transform:translate(5px,0) }
+	8.82353% { transform:translate(0,0) }
+	13.23529% { transform:translate(5px,0) }
+	17.64706% { transform:translate(0,0) }
+	22.05882% { transform:translate(5px,0) }
+	26.47059% { transform:translate(0,0) }
+	100% { transform:translate(0,0) }
+}
+#MensajeTiendaNew:hover{
+	background:#080808;
+	color: #fff;
+}
+
 
 .newsletter-section {
 	background: #f7f7f7;

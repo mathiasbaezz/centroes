@@ -55,6 +55,34 @@ class Post(models.Model):
 
 
 
+class Gestion(models.Model):
+    author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    title = models.CharField(max_length=200, null=True, blank= True)
+    text = models.TextField(null=True, blank=True)
+    foto1 = models.ImageField(null=True, blank=True)
+    foto2 = models.ImageField(null=True, blank=True)
+    foto3 = models.ImageField(null=True, blank=True)
+    foto4 = models.ImageField(null=True, blank=True)
+    foto5 = models.ImageField(null=True, blank=True)
+    published_date = models.DateTimeField(blank=True, null=True)
+    slug= models.SlugField(null=False, default="#")
+
+    def get_absolute_url(self):
+        return reverse('gestionce', kwargs={'slug': self.slug})
+
+    def save(self, *args, **kwargs):  # new
+        if not self.slug:
+            self.slug = slugify(self.title)
+        return super().save(*args, **kwargs)
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.title
+
+
 class  Newsletter_email(models.Model):
     email = models.URLField(null=True, blank= True)
     created_at = datetime.date.today()
@@ -162,6 +190,15 @@ class Miembro(models.Model):
     def __str__(self):
         return self.nombre
 
+class Deporte(models.Model):
+    foto = models.ImageField(null=True, blank=True)
+    nombre = models.CharField(max_length=300)
+    link = models.URLField(null=True, blank=True)
+
+
+
+    def __str__(self):
+        return self.nombre
 
 class Testimonio(models.Model):
     foto = models.ImageField(null=True, blank=True)

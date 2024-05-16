@@ -1,0 +1,174 @@
+{% include "cabecera.html" %}
+{% load static %}
+
+	<!-- Breadcrumb section -->
+	<div class="site-breadcrumb">
+		<div class="container">
+			<a href="/"><i class="fa fa-home"></i> Inicio</a> <i class="fa fa-angle-right"></i>
+            <a href="/blog"> Blog</a> <i class="fa fa-angle-right"></i>
+			<span>Detalles</span>
+		</div>
+	</div>
+	<!-- Breadcrumb section end -->
+    <div class="container">
+    <ol class="breadcrumb" style="background-color: transparent;">
+      <li class="breadcrumb-item" ><a href="/" style="color: black"><i class="fa fa-home" style="color: black"></i> Inicio</a> <i class="fa fa-angle-right"></i></li>
+      <li class="breadcrumb-item"><a href="/blog" style="color: black"> Blog</a> <i class="fa fa-angle-right"></i></li>
+      <li class="breadcrumb-item active">Detalles</li>
+    </ol>
+    </div>
+
+
+	<!-- Blog page section  -->
+	<section class="blog-page-section spad pt-0">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="post-item post-details">
+
+						<div class="post-content">
+							<h3>{{ gestion.title }}</h3>
+							<div class="post-meta">
+								<span><i class="fa fa-calendar-o"></i>     {{ gestion.published_date }}</span>
+								<span><i class="fa fa-user"></i>      {{ post.author }}</span>
+							</div>
+                            <p>{{ gestion.text | linebreaksbr }}</p>
+                            <blockquote><em>" De esta manera la FCyT cumple con su visión de ser una Facultad Líder, además de cumplir un rol de reunir a distintos sectores de la profesión en pos de abrir horizontes para sus alumnos y a la comunidad en general."</em></blockquote>
+						</div>
+                        <img src="{% static "image/blog/" %}{{ gestion.foto1 }}" class="post-thumb-full" alt="">
+                        <img src="{% static "image/blog/" %}{{ gestion.foto2 }}" class="post-thumb-full" alt="">
+                        <img src="{% static "image/blog/" %}{{ gestion.foto3 }}" class="post-thumb-full" alt="">
+                        <img src="{% static "image/blog/" %}{{ gestion.foto4 }}" class="post-thumb-full" alt="">
+                        <img src="{% static "image/blog/" %}{{ gestion.foto5 }}" class="post-thumb-full" alt="">
+                        <div class="tag"><i class="fa fa-tag"></i> {{ gestion.categoriacarrera }} , {{ gestion.categoriaedu}} , {{ gestion.categoriafcyt }}</div>
+						<div class="post-author">
+							<div class="pa-thumb set-bg" data-setbg="{% static "image/blog/author2.png" %}"></div>
+							<div class="pa-content">
+                                <h4>Secretaría de Prensa - Marketing & Cultura.</h4>
+								<p>" Este y otros artículos son editados y publicados por parte de las Secretarías de Prensa - Marketing & Cultura del Centro de Estudiantes de manera conjunta."</p>
+							</div>
+						</div>
+						<!--<div class="comment-warp">
+							<h4 class="comment-title">3 Comments</h4>
+							<ul class="comment-list">
+								<li>
+									<div class="comment">
+										<div class="comment-avator set-bg" data-setbg="{% static "image/blog/comment/1.jpg" %}"></div>
+										<div class="comment-content">
+											<span class="c-date">24 Mar 2018</span>
+											<h5>Kelly Richardson</h5>
+											<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam.</p>
+											<a href="" class="c-btn">Like</a>
+											<a href="" class="c-btn">Reply</a>
+										</div>
+									</div>
+									<ul class="replay-comment-list">
+										<li>
+											<div class="comment">
+												<div class="comment-avator set-bg" data-setbg="{% static "image/blog/comment/2.jpg" %}"></div>
+												<div class="comment-content">
+													<span class="c-date">24 Mar 2018</span>
+													<h5>Gordon Browns</h5>
+													<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore.</p>
+													<a href="" class="c-btn">Like</a>
+													<a href="" class="c-btn">Reply</a>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div class="comment">
+										<div class="comment-avator set-bg" data-setbg="{% static "image/blog/comment/3.jpg" %}"></div>
+										<div class="comment-content">
+											<span class="c-date">24 Mar 2018</span>
+											<h5>Scott Langton</h5>
+											<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam.</p>
+											<a href="" class="c-btn">Like</a>
+											<a href="" class="c-btn">Reply</a>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<div class="comment-form-warp">
+								<h4 class="comment-title">Leave Your Comment</h4>
+								<form class="comment-form">
+									<div class="row">
+										<div class="col-sm-6">
+											<input type="text" placeholder="Your Name">
+										</div>
+										<div class="col-sm-6">
+											<input type="email" placeholder="Your Email">
+										</div>
+										<div class="col-sm-12">
+											<textarea placeholder="Your Message"></textarea>
+											<button class="site-btn">SEND COMMENT</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>-->
+					</div>
+				</div>
+				<!-- sidebar -->
+				<div class="col-sm-8 col-md-5 col-lg-4 col-xl-3 offset-xl-1 offset-0 pl-xl-0 sidebar">
+					<!-- widget -->
+					<div class="widget">
+                        <a class="weatherwidget-io" href="https://forecast7.com/es/n25d36n56d46/coronel-oviedo/" data-label_1="CORONEL OVIEDO" data-label_2="CLIMA" data-font="Ubuntu" data-icons="Climacons Animated" data-days="3" data-theme="clear" >CORONEL OVIEDO CLIMA</a>
+					</div>
+					<!-- widget -->
+
+                <div class ="widget">
+                <div id='gcw_mainFAKUrfbmW' class='gcw_mainFAKUrfbmW'></div>
+                <a id='gcw_siteFAKUrfbmW' href='https://freecurrencyrates.com/es/'></a>
+                <script>function reloadFAKUrfbmW(){ var sc = document.getElementById('scFAKUrfbmW');if (sc) sc.parentNode.removeChild(sc);sc = document.createElement('script');sc.type = 'text/javascript';sc.charset = 'UTF-8';sc.async = true;sc.id='scFAKUrfbmW';sc.src = 'https://freecurrencyrates.com/es/widget-vertical-editable?iso=USD-EUR-BTC-XUL&df=1&p=FAKUrfbmW&v=fis&source=blockchain&width=350&width_title=0&firstrowvalue=1&thm=dddddd,ffffff,dddddd,dddddd,444444,dddddd,ffffff,000000,000000&title=Conversor%20de%20Divisas&tzo=180';var div = document.getElementById('gcw_mainFAKUrfbmW');div.parentNode.insertBefore(sc, div);} reloadFAKUrfbmW(); </script>
+                <!-- put custom styles here: .gcw_mainFAKUrfbmW{}, .gcw_headerFAKUrfbmW{}, .gcw_ratesFAKUrfbmW{}, .gcw_sourceFAKUrfbmW{} -->
+                <!--End of Currency Converter widget by FreeCurrencyRates.com -->
+				</div>
+
+
+					<div class="widget">
+						<h5 class="widget-title">Noticias Recientes</h5>
+						<div class="recent-post-widget">
+							<!-- recent post -->
+                            {% for post in posts %}
+							<div class="rp-item">
+								<div class="rp-thumb set-bg" data-setbg="{% static "image/blog/"%}{{ post.foto }}"></div>
+								<div class="rp-content">
+									<h6><a href="/blog/{{ post.id }}" style="color:black">{{ post.title }}</a></h6>
+									<p><i class="fa fa-clock-o"></i> {{ post.published_date }}</p>
+								</div>
+							</div>
+                            {% endfor %}
+							<!-- recent post -->
+						</div>
+					</div>
+					<!-- widget -->
+					<div class="widget">
+						<h4 class="widget-title">Tags</h4>
+						<div class="tags">
+							<a href="/tag7">ELECTRÓNICA</a>
+                            <a href="/tag6">ELECTRICIDAD</a>
+                            <a href="/tag5">INFORMÁTICA</a>
+                            <a href="/tag4">CONSTRUCCIÓN</a>
+                            <a href="/tag10">EDUCACIÓN</a>
+                            <a href="/tag1">DESARROLLO</a>
+                            <a href="/tag8">DEPORTES</a>
+                            <a href="/tag2">PROYECTOS</a>
+                            <a href="/tag9">MEDIO AMBIENTE</a>
+                            <a href="/tag3">DEMOCRACIA</a>
+                            <a href="/tag11">FCyT</a>
+                            <a href="/tag12">PARAGUAY</a>
+						</div>
+					</div>
+					<!-- widget -->
+					<div class="widget">
+						<img src="{% static "image/add.png" %}" alt="" class="sombra">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Blog page section end -->
+
+{% include "pie_pagina.html" %}
